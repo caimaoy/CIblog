@@ -55,35 +55,22 @@ $(function() {
   $(this).next().slideDown("fast");
   }
 });
-});
+});*/
 
 $(function() {
   // 你可以在这里继续使用$作为别名...
-  $("#signin-email").keydown(function(){
+  $("#signin-email").keyup(function(){
   //$("lable[for = 'signin-email']").hide();
-  //if(this.value.length != 0){
+  if(this.value.length != 0){
   $(this).next().hide();
-//  }
+  }
 }).blur(function(){
   //$("lable[for = 'signin-email']").hide();
   if(this.value.length == 0){
   $(this).next().slideDown("fast");
-  //$(this).next().fadeIn("slow");
   }
 });
 });
-*/
-$(function(){
-  $("#signin-email").bind({
-    keydown:function(){$(this).next().hide();},
-    blur:function(){ 
-      if($(this).val().length == 0){
-        $(this).next().slideDown("fast");
-  }}
-  });
-});
-
-
 /*
 $(function() {
   // 你可以在这里继续使用$作为别名...
@@ -97,31 +84,21 @@ $(function() {
 
 
 */
-$(function(){
-  $("#signin-password").bind({
-    keydown: function(){$(this).next().hide();},
-    blur:function(){
-      if($(this).val().length == 0){
-        $(this).next().slideDown("fast");
-      }
-    }
-  });
-});
 
-/*$(function() {
+$(function() {
   // 你可以在这里继续使用$作为别名...
-  $("#signin-password").keydown(function(){
+  $("#signin-password").keyup(function(){
   //$("lable[for = 'signin-email']").hide();
-  //if(this.value.length != 0){
+  if(this.value.length != 0){
   $(this).next().hide();
-  //}
+  }
 }).blur(function(){
   //$("lable[for = 'signin-email']").hide();
   if(this.value.length == 0){
   $(this).next().slideDown("fast");
   }
 });
-});*/
+});
 
 
 /*
@@ -147,7 +124,7 @@ function test(){
 		//b.overflow = "hidden" ;
 	}
 }
-
+*/
 
 function load(){
   var e = new Array();
@@ -160,16 +137,3 @@ function load(){
     }
   };
 }
-*/
-
-$(function(){
-  var e = [];
-  e[0] = $('#signin-email');
-  e[1] = $('#signin-password');
-
-  $.each(e, function(i){
-  if(e[i].val().length > 0){
-      e[i].next().css("display","none");
-    }
-  });
-});
